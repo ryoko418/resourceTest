@@ -1,0 +1,49 @@
+title: notification tool tenancy 作成
+# Sub Title shown in Application Information tab.
+description: |
+ notification tool tenancy 作成
+informationalText: notification tool tenancy 作成
+schemaVersion: 0.1.0
+version: "20240723"
+
+# URL of Logo Icon used on Application Information tab. Logo must be 130x130 pixels.
+# (Optional)
+logoUrl: https://cloudmarketplace.oracle.com/marketplace/content?contentId=53066708
+
+# Used in Application Information tab to Hyperlink Title and Logo to the Marketplace
+# Listing.
+# Also used to link to Listing Usage section for "View Instructions".
+# (Optional) If it is missing, Application Information uses the
+# "marketplace-listing-id" tag for the same purpose.
+source:
+  type: marketplace
+  reference: 16132843
+
+locale: "jp"
+variableGroups:
+  - title: "テナント情報"
+    variables:
+      - ${tenancy_ocid}
+      - ${compartment_ocid}
+      - ${region}
+
+variables:
+  tenancy_ocid:
+    type: string
+    title: "Tenancy OCID"
+    description: "Tenancy OCID"
+    required: true
+ 
+  compartment_ocid:
+    type: oci:identity:compartment:id
+    title: "コンパートメント OCID"
+    description: "コンパートメントocid"
+    required: true
+
+  region:
+    type: oci:identity:region:name
+    title: "リージョン"
+    description: "リージョン"
+    required: true
+
+
